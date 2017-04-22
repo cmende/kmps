@@ -6,13 +6,13 @@ let x: Value[] = ['a', false, 'c']
 // let y: Value[] = ['a', false, 1]
 // let y: Value[] = 'a'
 
-function odd(x: Value) {
-  if (typeof x === "boolean")
-    return !x
-  return x
+function odd(b: boolean) : Value {
+  if (b)
+    return 'a'
+  return false
 }
 
-alert(odd('a'))
+alert(odd(true))
 alert(odd(false))
 
 // Fehler:

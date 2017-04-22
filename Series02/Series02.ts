@@ -1,4 +1,4 @@
-function series02() {
+function aufgabe1() {
   // TypeScript-Variablendeklaration: Wert kann geändert werden
   let a = 'a'
   a = 'a2'
@@ -27,4 +27,9 @@ function series02() {
   // auch das ist mit let nicht möglich
   var c = 'c2'
   var c = 'c3'
+}
+
+function aufgabe2() {
+  const arr : number[] = []
+  arr.push(1)
 }

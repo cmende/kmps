@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.function.Function;
 
 /**
  * Created by Christoph on 22.04.2017.
@@ -22,6 +23,14 @@ public class Series03a {
         public abstract T get();
         public abstract boolean isPresent();
         public abstract T orElse(T other);
+        public abstract <R> R fold(R initial, Function<T, R> f);
+
+        // map f xs = foldr (\ a b -> f a : b) [] xs
+        public Option<T> map(Function<T, T> func) { return null; }
+
+        
+        public Option<T> flatMap(Function<T, Option<T>> func) { return null; }
+
 
         public static class Some<T> extends Option<T> {
             private final T value;
@@ -31,6 +40,12 @@ public class Series03a {
             public T get() { return value; }
             public boolean isPresent() { return true; }
             public T orElse(T other) { return value; }
+
+            // TODO
+            public <R> R fold(R initial, Function<T, R> f) {
+                return null;
+            }
+
             public String toString() { return "Some(" + value.toString() + ")"; }
         }
 
@@ -38,6 +53,12 @@ public class Series03a {
             public T get() { throw new NoSuchElementException("No value present"); }
             public boolean isPresent() { return false; }
             public T orElse(T other) { return other; }
+
+            // TODO
+            public <R> R fold(R initial, Function<T, R> f) {
+                return null;
+            }
+
             public String toString() {´return "Empty"; }
         }
     }
